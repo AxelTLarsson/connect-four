@@ -39,3 +39,31 @@
 
     justify-content: center;
 }
+
+#gameBoard {
+    width: 100%;
+    height: 100%;
+    border-spacing: 0px;
+    /* We want the top of the board to be "open" */
+    border-collapse: collapse;
+}
+
+/* Selecting all but the top row cells */
+#gameBoard > tr:not(:first-child) td {
+    border: 1px solid black;
+}
+
+/* Selecting the top row cells */
+#gameBoard > tr:first-child td {
+    border: 1px solid black;
+    /* The top row is "open" from the top */
+    border-top-style: dotted;
+}
+
+.cell {
+    background: white;
+    width: 8vw;
+    max-width: 4em;
+    height: 8vw;
+    max-height: 4em;
+}
