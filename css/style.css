@@ -67,3 +67,7 @@
     height: 8vw;
     max-height: 4em;
 }
+
+.hover {
+    background-color: salmon;
+}
