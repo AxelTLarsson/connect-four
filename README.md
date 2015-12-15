@@ -2,8 +2,8 @@
 The app is written in JavaScript and for the time being I am only doing a frontend. Backend may come later though.
 
 ### Run it
-To make it fancy, install ```npm``` and then ```npm install jspm --save-dev```.
-Then just clone and cd into the directory. Then do
+To make it fancy, install ```npm``` and then clone and cd into the project, then do  ```npm install jspm --save-dev```.
+Then:
 ```
 jspm install
 npm install live-server -g
