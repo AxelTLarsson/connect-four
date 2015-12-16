@@ -71,3 +71,13 @@
 .hover {
     background-color: salmon;
 }
+
+/* Marker for player 0 */
+.marker0 {
+    background: yellow;
+}
+
+/* Marker for player 1 */
+.marker1 {
+    background: hotpink;
+}
