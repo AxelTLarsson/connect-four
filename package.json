@@ -1,7 +1,8 @@
 {
   "jspm": {
     "dependencies": {
-      "jquery": "github:components/jquery@^2.1.4"
+      "jquery": "github:components/jquery@^2.1.4",
+      "tablesorter": "npm:tablesorter@^2.25.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
