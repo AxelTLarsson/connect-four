@@ -16,6 +16,7 @@ body {
     justify-content: center;
 }
 
+/* Selects all children of .wrapper */
 .wrapper > * {
     padding: 2em;
     flex: 1 100%;
@@ -60,22 +61,12 @@ h1 {
 
 #gameBoard {
     width: 100%;
-    height: 100%;
-    border-spacing: 0px;
-    /* We want the top of the board to be "open" */
     border-collapse: collapse;
+    border-spacing: 0;
 }
 
-/* Selecting all but the top row cells */
-#gameBoard > tr:not(:first-child) td {
-    border: 1px solid black;
-}
-
-/* Selecting the top row cells */
-#gameBoard > tr:first-child td {
-    border: 1px solid black;
-    /* The top row is "open" from the top */
-    border-top-style: dotted;
+tr, td {
+    height: 100%;
 }
 
 .cell {
@@ -84,6 +75,7 @@ h1 {
     max-width: 4em;
     height: 8vw;
     max-height: 4em;
+    overflow: hidden;
 }
 
 .hover {
@@ -92,10 +84,10 @@ h1 {
 
 /* Marker for player 0 */
 .marker0 {
-    background: yellow;
+    background-color: yellow;
 }
 
 /* Marker for player 1 */
 .marker1 {
-    background: hotpink;
+    background-color: hotpink;
 }
