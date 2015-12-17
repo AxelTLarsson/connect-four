@@ -1,7 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 body {
     margin: 0;
     color: #333;
-    font-family: Lato, Normal 400;
+    font-family: 'Open Sans', sans-serif;
 }
 .wrapper {
     display: -webkit-box;
@@ -23,8 +24,8 @@ body {
 }
 
 .header {
-    background: #292c2f;
-    box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.15);
+    background: #0F1012;
+    box-shadow: 0px 1px 2px rgba(20, 20, 20, 0.8);
     padding: 0;
 }
 h1 {
@@ -35,8 +36,8 @@ h1 {
 
 .footer {
     background: lightgreen;
-    background-color: #292c2f;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    background-color: #0F1012;
+    box-shadow: 0 1px 1px 0 rgba(20, 20, 20, 0.8);
 }
 
 .footer {
@@ -45,7 +46,6 @@ h1 {
 
 .main {
     text-align: left;
-    background: deepskyblue;
     max-width: 40em;
 
     display: -webkit-box;
@@ -63,6 +63,8 @@ h1 {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    border: 1px solid black;
+    background-color: blue;
 }
 
 tr, td {
@@ -76,6 +78,7 @@ tr, td {
     height: 8vw;
     max-height: 4em;
     overflow: hidden;
+    border-radius: 50%;
 }
 
 .hover {
@@ -84,10 +87,51 @@ tr, td {
 
 /* Marker for player 0 */
 .marker0 {
-    background-color: yellow;
+    background-color: red;
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, orange 0%, red 100%, red 95%);
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, orange, red);
+    background-image: radial-gradient(45px 45px 45deg, circle cover, orange 0%, red 100%, red 95%);
 }
 
 /* Marker for player 1 */
 .marker1 {
-    background-color: hotpink;
+    background-color: yellow;
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+    background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+}
+
+
+/* Highscore table */
+#highscore {
+    width: 100%;
+    max-width: 300px;
+    background-color: #0F1012;
+    color: #f9f9f9;
+    box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.8);
+    padding: 1em;
+}
+
+#highscore thead {
+    color: #64AAA4;
+}
+#highscore th:nth-child(2) {
+    text-align: center;
+    
+}
+
+#highscore tr td:nth-child(2) {
+    text-align: center;
+}
+
+/*
+#highscore tr:nth-child(1) {
+    background-color: green;
+    color: white;
+}*/
+
+#highscore caption {
+    color: #0F1012;
+    font-size: 1.4em;
+    padding: 1em;
 }
