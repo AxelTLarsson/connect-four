@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+/* Use a flexbox layout for the main content */
 body {
     margin: 0;
     color: #333;
@@ -124,14 +126,106 @@ tr, td {
     text-align: center;
 }
 
-/*
-#highscore tr:nth-child(1) {
-    background-color: green;
-    color: white;
-}*/
-
-#highscore caption {
+#highscore caption, #auditCaption {
     color: #0F1012;
     font-size: 1.4em;
     padding: 1em;
+    width: 100%;
+}
+
+#audit, #settings, #highscoreDiv {
+    min-width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    justify-content: center;
+}
+
+#audit {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+#auditCaption {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    justify-content: center;
+}
+
+#settings {
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 100%;
+    margin-top: 2em;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+
+#gameSetup, #sizeGame {
+    background: #4D4D4D;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #797979;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 20px;
+    margin: -30px 0 30px 0;
+    width: 100%;
+}
+
+#sizeGame {
+    margin-top: 1em;
+}
+
+#settings input
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 2em;
+    font: 16px Arial, Helvetica, sans-serif;
+}
+
+button {
+    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    background-color: #2CBBBB;
+    border: 1px solid #27A0A0;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+    background-color:#34CACA;
 }

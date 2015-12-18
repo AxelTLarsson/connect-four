@@ -22,34 +22,33 @@
             <h1>Connect Four</h1></header>
         <main class="main">
             <form id="settings" action="nothing">
-                <fieldset>
-                    <legend>Game setup</legend>
-                    <input id="player1" type="text" name="player1" value="" placeholder="Player 1" autofocus required>
-                    <input id="player2" type="text" name="player2" value="" placeholder="Player 2" required>
-                    <fieldset>
-                        <legend>Size of game board</legend>
-                        <label for="x-size">Width</label>
-                        <input id="x-size" type="number" name="x-size" value="7" placeholder="7">
-                        <label for="y-size">Height</label>
-                        <input id="y-size" type="number" name="y-size" value="6" placeholder="6">
-                    </fieldset>
-                    <button id="play-button" type="submit">Play!</button>
-                </fieldset>
+                <div id="gameSetup">Game setup</div>
+                <input id="player1" type="text" name="player1" value="" placeholder="Player 1" autofocus required>
+                <input id="player2" type="text" name="player2" value="" placeholder="Player 2" required>
+                <div id="sizeGame">Size of game board</div>
+                <label for="x-size">Width</label>
+                <input id="x-size" type="number" name="x-size" value="7" placeholder="7">
+                <label for="y-size">Height</label>
+                <input id="y-size" type="number" name="y-size" value="6" placeholder="6">
+                <button id="play-button" type="submit">Play!</button>
             </form>
-            <table id="highscore" class="tablesorter" style="display: none;">
-                <caption>Highscore list</caption>
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Number of wins</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Will be filled in by JS -->
-                </tbody>
-            </table>
+            <div id="highscoreDiv">
+                <table id="highscore" class="tablesorter" style="display: none;">
+                    <caption>Highscore list</caption>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Number of wins</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Will be filled in by JS -->
+                    </tbody>
+                </table>
+            </div>
             <div id="audit">
-                <button id="auditButton" type="button">Show audit log</button>
+                <div id="auditCaption">Audit log</div>
+                <button id="auditButton" type="button">Toggle audit log</button>
                 <ul id="auditLog" style="display: none;"></ul>
             </div>
             <div id="game">
