@@ -36,17 +36,22 @@
                     <button id="play-button" type="submit">Play!</button>
                 </fieldset>
             </form>
-            <table id="highscore" class="tablesorter">
+            <table id="highscore" class="tablesorter" style="display: none;">
                 <caption>Highscore list</caption>
                 <thead>
                     <tr>
-                        <th>Player</th><th>Number of wins</th>
+                        <th>Player</th>
+                        <th>Number of wins</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Will be filled in by JS -->
                 </tbody>
             </table>
+            <div id="audit">
+                <button id="auditButton" type="button">Show audit log</button>
+                <ul id="auditLog" style="display: none;"></ul>
+            </div>
             <div id="game">
                 <!-- Will be filled in by JS -->
             </div>
