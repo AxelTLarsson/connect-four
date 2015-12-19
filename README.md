@@ -1,14 +1,19 @@
-## Connect-four
-The app is written in JavaScript and for the time being I am only doing a frontend. Backend may come later though.
+## Running the app
+The simplest way to test the app is to visit [connect-four.axellarsson.nu](http://connect-four.axellarsson.nu), where the app is running on an Apache web server.
 
-### Run it
-To make it fancy, install ```npm``` and then clone and cd into the project, then do  ```npm install jspm --save-dev```.
-Then:
-```
-jspm install
-npm install live-server -g
-live-server
-```
-Then go to [http://localhost:8000](http://localhost:8000) or whichever port ```live-server``` chooses.
+To run the app locally:
+1. Install `npm`.
+2. Install JSPM: `npm install -g jspm`.
+3. Clone the repo and enter the dir: `git clone https://github.com/AxelTLarsson/connect-four.git && cd connect-four`.
+4. Install dependencies: `npm install && jspm install`.
+5. Now the app should be able to be served by any web server, for instance `pyton -m SimpleHTTPServer`.
+6. Click the link: [http://localhost:8000](http://localhost:8000) (the port number may need to be adjusted if another web server is used).
 
-Alternatively, either use ```python -m SimpleHTTPServer``` or the simplest way possible: just click the index.html file after having downloaded the zip or cloned the repo!
+## Architecture
+The app is written in JavaScript and I am using some ES6 code with the help of the Babel transpiler. The package manager of choice is JSPM, which can handle ES6 modules and does automatic transpilation to ES5 (which is one of the reasons I choose it). JSPM can install packages from npm and github among other places.
+
+The architecture of the app is quite simple. In `lib/main.js` the main logic of the interface is handled via DOM manipulation with JavaScript and JQuery. In `lib/connectFour.js` the logic of the game resides, e.g. the win algorithm resides here. That module does not "know" anything about the UI of the app and it is imported as `game` in `main.js`.
+
+There is also a module `lib/audit.js` which handles the audit log.
+
+Persistent storage is handled with HTML 5 Local Storage via JavaScript and a pair of methods to simplify storing and retrieving JSON (in the standard, Local Storage does string serialisation only).
