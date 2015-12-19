@@ -2,6 +2,7 @@
 The simplest way to test the app is to visit [connect-four.axellarsson.nu](http://connect-four.axellarsson.nu), where the app is running on an Apache web server.
 
 To run the app locally:
+
 1. Install `npm`.
 2. Install JSPM: `npm install -g jspm`.
 3. Clone the repo and enter the dir: `git clone https://github.com/AxelTLarsson/connect-four.git && cd connect-four`.
