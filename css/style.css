@@ -1,75 +1,187 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
-/* Use a flexbox layout for the main content */
+/* General stuff */
+
 body {
     margin: 0;
     color: #333;
     font-family: 'Open Sans', sans-serif;
 }
+
+
+/* ------------------------------
+    Layout - flex with centering
+---------------------------------*/
+
 .wrapper {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
     font-weight: bold;
     text-align: center;
+    
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
-/* Selects all children of .wrapper */
+
+/* Selects all children of .wrapper (header, main, footer) */
+
 .wrapper > * {
     padding: 2em;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 100%;
+    -ms-flex: 1 100%;
     flex: 1 100%;
 }
+
+
+/* ------------------------------
+    Style the start page
+---------------------------------*/
 
 .header {
     background: #0F1012;
     box-shadow: 0px 1px 2px rgba(20, 20, 20, 0.8);
     padding: 0;
 }
+
 h1 {
     color: white;
     font-size: 2em;
-    font-family: Lato, Ultra-Bold 900;
+}
+
+.main {
+    text-align: left;
+    max-width: 40em;
 }
 
 .footer {
     background: lightgreen;
     background-color: #0F1012;
     box-shadow: 0 1px 1px 0 rgba(20, 20, 20, 0.8);
-}
-
-.footer {
     color: white;
 }
 
-.main {
-    text-align: left;
-    max-width: 40em;
 
+/*
+Layout the form, highscore table and audit log (centered with flex)
+*/
+
+#auditWrapper,
+#highscoreWrapper,
+#settingsWrapper,
+#gameWrapper {
     display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+
     -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
     flex-flow: row wrap;
 
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
+#audit > *,
+#settings > *,
+#highscore > *,
+#gamewrapper > * {
+    padding: 1em;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 100%;
+    -ms-flex: 1 100%;
+    flex: 1 100%;
+}
+
+/* Settings form */
+#settings {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 5px rgba(0, 0, 0, 0.22);
+    padding: 1em;
+}
+
+#settings fieldset {
+    border: none;
+}
+
+
+
+#settings fieldset fieldset legend {
+    margin-top: 20px;
+}
+
+/* Highscore table */
+
+#highscore {
+    background-color: #0F1012;
+    color: #0F1012;
+    padding: 1em;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 5px rgba(0, 0, 0, 0.22);
+
+}
+
+#highscore thead {
+    color: #64AAA4;
+}
+
+#highscore th:nth-child(2) {
+    text-align: center;
+}
+
+#highscore tr td:nth-child(2) {
+    text-align: center;
+}
+
+#highscore caption {
+    color: #0F1012;
+    font-size: 1.4em;
+    padding: 1em;
+}
+
+#auditWrapper {
+    padding-top: 2em;
+}
+/* ------------------------------
+    Style the game board
+---------------------------------*/
+#turn-indicator {
+    color: #0F1012;
+    font-size: 1.4em;
+    padding: 1em;
+    text-align: center;
+}
+
 #gameBoard {
-    width: 100%;
+    padding: 1em;
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid black;
     background-color: blue;
 }
 
-tr, td {
+tr,
+td {
     height: 100%;
 }
 
@@ -87,145 +199,22 @@ tr, td {
     background-color: salmon;
 }
 
+
 /* Marker for player 0 */
-.marker0 {
+
+.marker0, .hoverCell0 {
     background-color: red;
     background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, orange 0%, red 100%, red 95%);
     background-image: -webkit-radial-gradient(45px 45px, circle cover, orange, red);
     background-image: radial-gradient(45px 45px 45deg, circle cover, orange 0%, red 100%, red 95%);
 }
 
+
 /* Marker for player 1 */
-.marker1 {
+
+.marker1, .hoverCell1 {
     background-color: yellow;
     background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
     background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
     background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
-}
-
-
-/* Highscore table */
-#highscore {
-    width: 100%;
-    max-width: 300px;
-    background-color: #0F1012;
-    color: #f9f9f9;
-    box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.8);
-    padding: 1em;
-}
-
-#highscore thead {
-    color: #64AAA4;
-}
-#highscore th:nth-child(2) {
-    text-align: center;
-    
-}
-
-#highscore tr td:nth-child(2) {
-    text-align: center;
-}
-
-#highscore caption, #auditCaption {
-    color: #0F1012;
-    font-size: 1.4em;
-    padding: 1em;
-    width: 100%;
-}
-
-#audit, #settings, #highscoreDiv {
-    min-width: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-
-    justify-content: center;
-}
-
-#audit {
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-
-#auditCaption {
-    width: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-
-    justify-content: center;
-}
-
-#settings {
-    font-family: 'Open Sans Condensed', arial, sans;
-    width: 100%;
-    margin-top: 2em;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
-}
-
-#gameSetup, #sizeGame {
-    background: #4D4D4D;
-    text-transform: uppercase;
-    font-family: 'Open Sans Condensed', sans-serif;
-    color: #797979;
-    font-size: 18px;
-    font-weight: 100;
-    padding: 20px;
-    margin: -30px 0 30px 0;
-    width: 100%;
-}
-
-#sizeGame {
-    margin-top: 1em;
-}
-
-#settings input
-{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
-    display: block;
-    width: 100%;
-    padding: 7px;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    background: transparent;
-    margin-bottom: 2em;
-    font: 16px Arial, Helvetica, sans-serif;
-}
-
-button {
-    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    background-color: #2CBBBB;
-    border: 1px solid #27A0A0;
-    display: inline-block;
-    cursor: pointer;
-    color: #FFFFFF;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 14px;
-    padding: 8px 18px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-button:hover {
-    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
-    background-color:#34CACA;
 }
