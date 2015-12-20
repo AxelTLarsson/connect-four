@@ -17327,7 +17327,7 @@ $__System.register('d', ['c'], function (_export) {
             return false;
         } else {
             instance.board[row][col] = instance.turn;
-            audit.log(player, ' drops a token in ', col);
+            audit.log(player + ' drops a token in column ' + col);
             return row;
         }
     }
@@ -17383,7 +17383,7 @@ $__System.register('d', ['c'], function (_export) {
         var upRightPos = traverseWhile(predicate, stepUpRight, row, col);
         // > 4 because both step functions will have stepped one step too much
         if (upRightPos.i - downLeftPos.i > 4) {
-            console.log('win diagonally!');
+            audit.log('win diagonally!');
             return true;
         }
 
@@ -17488,7 +17488,7 @@ $__System.register('d', ['c'], function (_export) {
     }
 
     function setup(playerNames, xSize, ySize) {
-        audit.log('setting up the game.');
+        audit.log('setting up the game');
 
         instance.players = playerNames;
         instance.xSize = xSize;
@@ -17946,7 +17946,6 @@ $__System.register('1', ['9', '19', 'd', 'b', 'c'], function (_export) {
                             alert('no space in this column');
                         } else {
                             // only update if makeMove was somehow succesful
-                            console.log('placed in row ' + row);
                             getCell(row, col).classList.add('marker' + game.currentPlayerId());
                             if (game.isWon(row, col)) {
                                 // Display winner message
@@ -17957,9 +17956,7 @@ $__System.register('1', ['9', '19', 'd', 'b', 'c'], function (_export) {
                                 // Change text of reset button to 'Play again'
                                 $('#resetButton').text('Play again!');
                                 game.updateHighScore(game.currentPlayer());
-                                console.info(game.currentPlayer() + ' won the game, deleting instance');
                                 localStorage.removeItem('instance');
-                                console.info('Saving highscore object');
                                 localStorage.setObject('highscore', game.getHighscore());
                                 updateHighscore();
                             } else {
@@ -18043,4 +18040,4 @@ $__System.register('1', ['9', '19', 'd', 'b', 'c'], function (_export) {
 (function(factory) {
   factory();
 });
-//# sourceMappingURL=app-v0.1.0.js.map
+//# sourceMappingURL=app.js.map
