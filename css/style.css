@@ -36,8 +36,6 @@ body {
 /* Selects all children of .wrapper (header, main, footer) */
 
 .wrapper > * {
-    padding: 2em;
-
     -webkit-box-flex: 1;
     -webkit-flex: 1 100%;
     -ms-flex: 1 100%;
@@ -204,12 +202,11 @@ td {
 
 .cell {
     background: white;
-    width: 8vw;
-    max-width: 4em;
-    height: 8vw;
-    max-height: 4em;
+    min-width: 8vw;
+    min-height: 8vw;
     overflow: hidden;
     border-radius: 50%;
+
 }
 
 .hover {
