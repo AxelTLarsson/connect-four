@@ -2,6 +2,7 @@
 The simplest way to test the app is to visit [connect-four.axellarsson.nu](http://connect-four.axellarsson.nu), where the app is running on an Apache web server.
 
 To run the app locally:
+
 1. Install `npm`.
 2. Install JSPM: `npm install -g jspm`.
 3. Clone the repo and enter the dir: `git clone https://github.com/AxelTLarsson/connect-four.git && cd connect-four`.
@@ -10,7 +11,7 @@ To run the app locally:
 6. Click the link: [http://localhost:8000](http://localhost:8000) (the port number may need to be adjusted if another web server is used).
 
 ## Architecture
-The app is written in JavaScript and I am using some ES6 code with the help of the Babel transpiler. The package manager of choice is JSPM, which can handle ES6 modules and does automatic transpilation to ES5 (which is one of the reasons I choose it). JSPM can install packages from npm and github among other places.
+The app is written in JavaScript and I am using some ES6 code with the help of the Babel transpiler. The package manager of choice is JSPM, which can handle ES6 modules and does automatic transpilation to ES5 (which is one of the reasons I chose it). JSPM can install packages from npm and github among other places.
 
 The architecture of the app is quite simple. In `lib/main.js` the main logic of the interface is handled via DOM manipulation with JavaScript and JQuery. In `lib/connectFour.js` the logic of the game resides, e.g. the win algorithm resides here. That module does not "know" anything about the UI of the app and it is imported as `game` in `main.js`.
 
