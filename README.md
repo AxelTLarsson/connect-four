@@ -1,7 +1,8 @@
 ## Running the app
-The simplest way to test the app is to visit [connect-four.axellarsson.nu](http://connect-four.axellarsson.nu), where the app is running on an Apache web server.
+See the `master` branch for instructions.
 
-To run the app locally:
+## Running the app in dev mode
+To run the app locally in development mode:
 
 1. Install `npm`.
 2. Install JSPM: `npm install -g jspm`.
