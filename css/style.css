@@ -235,24 +235,34 @@ input[type=number] {
 }
 
 #gameBoard {
-    padding: 1em;
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid black;
     background-color: blue;
+    width: 90vw;
+    max-width: 600px;
+    
 }
 
-tr,
-td {
-    height: 100%;
+#gameBoard td {
+    width: 14%;
+    position: relative;
+}
+#gameBoard td:after {
+    content: '';
+    display: block;
+    margin-top: 100%;
 }
 
 .cell {
     background: white;
-    min-width: 4vw;
-    min-height: 4vw;
     overflow: hidden;
     border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .hover {
