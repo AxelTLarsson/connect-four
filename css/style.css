@@ -245,7 +245,11 @@ input[type=number] {
 }
 
 #gameBoard td {
-    width: 14%;
+    /* The width here needs to be a fraction of 100, so
+    for a 7 column board -> 100/7 ~= 14 % etc.
+    This cannot be done another way so instead we let
+    JQuery do that for us
+    width: 100 / x; */
     position: relative;
 }
 #gameBoard td:after {
